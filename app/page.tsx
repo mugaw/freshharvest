@@ -1,66 +1,6 @@
 import Image from "next/image";
-
-const categories = [
-  {
-    title: "Fresh Fruits",
-    detail: "Seasonal picks and tropical favorites.",
-    image: "/images/categories/fruits.jpg",
-  },
-  {
-    title: "Garden Vegetables",
-    detail: "Crisp greens and daily harvests.",
-    image: "/images/categories/vegetables.jpg",
-  },
-  {
-    title: "Dairy & Eggs",
-    detail: "Small-batch cheeses and pasture eggs.",
-    image: "/images/categories/dairy.jpg",
-  },
-  {
-    title: "Pantry Staples",
-    detail: "Sustainable pantry essentials.",
-    image: "/images/categories/pantry.jpg",
-  },
-];
-
-const products = [
-  {
-    name: "Hass Avocado",
-    price: "$2.99",
-    unit: "each",
-    image: "/images/products/avocado.jpg",
-  },
-  {
-    name: "Blueberry Pack",
-    price: "$4.50",
-    unit: "12 oz",
-    image: "/images/products/blueberries.jpg",
-  },
-  {
-    name: "Organic Carrots",
-    price: "$3.20",
-    unit: "2 lb",
-    image: "/images/products/carrots.jpg",
-  },
-  {
-    name: "Creamy Brie",
-    price: "$6.75",
-    unit: "6 oz",
-    image: "/images/products/cheese.jpg",
-  },
-  {
-    name: "Free-Range Eggs",
-    price: "$5.30",
-    unit: "dozen",
-    image: "/images/products/eggs.jpg",
-  },
-  {
-    name: "Wild Salmon",
-    price: "$12.90",
-    unit: "8 oz",
-    image: "/images/products/salmon.jpg",
-  },
-];
+import Link from "next/link";
+import { categories, products } from "./data/products";
 
 const stats = [
   { label: "Local farms", value: "120+" },
@@ -70,53 +10,8 @@ const stats = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900">
-      <header className="border-b border-zinc-200/70 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-green-600 text-sm font-semibold text-white">
-              FH
-            </div>
-            <div>
-              <p className="text-lg font-semibold text-zinc-900">
-                Fresh Harvest
-              </p>
-              <p className="text-xs text-zinc-500">Farm to door in hours</p>
-            </div>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-600 md:flex">
-            <a className="hover:text-zinc-900" href="#categories">
-              Categories
-            </a>
-            <a className="hover:text-zinc-900" href="#featured">
-              Featured
-            </a>
-            <a className="hover:text-zinc-900" href="#sustainability">
-              Sustainability
-            </a>
-            <a className="hover:text-zinc-900" href="#reviews">
-              Reviews
-            </a>
-          </nav>
-          <div className="flex items-center gap-3">
-            <a
-              className="hidden text-sm font-medium text-zinc-600 hover:text-zinc-900 sm:inline-flex"
-              href="#"
-            >
-              Sign in
-            </a>
-            <a
-              className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-zinc-800"
-              href="#"
-            >
-              Start cart
-            </a>
-          </div>
-        </div>
-      </header>
-
-      <main>
-        <section className="mx-auto grid w-full max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+    <main>
+      <section className="mx-auto grid w-full max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
               Fresh arrivals every morning
@@ -130,18 +25,18 @@ export default function Home() {
               proteins.
             </p>
             <div className="mt-7 flex flex-wrap gap-4">
-              <a
+              <Link
                 className="inline-flex items-center justify-center rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-green-500"
-                href="#featured"
+                href="/shop"
               >
                 Shop fresh
-              </a>
-              <a
+              </Link>
+              <Link
                 className="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-white px-6 py-3 text-sm font-semibold text-zinc-900 transition hover:border-zinc-300"
-                href="#categories"
+                href="/shop?box=weekly"
               >
                 Build a weekly box
-              </a>
+              </Link>
             </div>
             <div className="mt-10 grid grid-cols-3 gap-6">
               {stats.map((stat) => (
@@ -187,10 +82,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          id="categories"
-          className="mx-auto w-full max-w-6xl px-6 py-12"
-        >
+        <section id="categories" className="mx-auto w-full max-w-6xl px-6 py-12">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="text-sm font-semibold text-green-700">
@@ -200,12 +92,12 @@ export default function Home() {
                 Everything you need for the week.
               </h2>
             </div>
-            <a
+            <Link
               className="text-sm font-semibold text-green-700 hover:text-green-800"
-              href="#featured"
+              href="/shop"
             >
               Browse all products
-            </a>
+            </Link>
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => (
@@ -229,19 +121,19 @@ export default function Home() {
                   <h3 className="mt-2 text-lg font-semibold text-zinc-900">
                     {category.title}
                   </h3>
-                  <p className="mt-3 text-sm font-semibold text-zinc-700">
+                  <Link
+                    className="mt-3 inline-flex text-sm font-semibold text-zinc-700 transition hover:text-zinc-900"
+                    href={`/shop?category=${category.key}`}
+                  >
                     Shop now →
-                  </p>
+                  </Link>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
-        <section
-          id="featured"
-          className="mx-auto w-full max-w-6xl px-6 py-12"
-        >
+        <section id="featured" className="mx-auto w-full max-w-6xl px-6 py-12">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="text-sm font-semibold text-green-700">
@@ -251,15 +143,15 @@ export default function Home() {
                 Fresh now, ready to deliver.
               </h2>
             </div>
-            <a
+            <Link
               className="text-sm font-semibold text-green-700 hover:text-green-800"
-              href="#reviews"
+              href="/shop?filter=featured"
             >
               View weekly specials
-            </a>
+            </Link>
           </div>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((product) => (
+            {products.slice(0, 6).map((product) => (
               <article
                 key={product.name}
                 className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm"
@@ -275,19 +167,22 @@ export default function Home() {
                 </div>
                 <div className="p-5">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-zinc-900">
+                    <Link
+                      className="text-lg font-semibold text-zinc-900 transition hover:text-zinc-700"
+                      href={`/products/${product.slug}`}
+                    >
                       {product.name}
-                    </h3>
+                    </Link>
                     <span className="text-sm font-semibold text-green-700">
                       {product.price}
                     </span>
                   </div>
                   <p className="mt-2 text-sm text-zinc-500">
-                    {product.unit} · Packed this morning
+                    Packed this morning · {product.origin}
                   </p>
                   <a
                     className="mt-4 inline-flex w-full items-center justify-center rounded-full border border-zinc-200 px-4 py-2 text-sm font-semibold text-zinc-900 transition hover:border-zinc-300"
-                    href="#"
+                    href={`/cart?add=${product.slug}`}
                   >
                     Add to cart
                   </a>
@@ -297,10 +192,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          id="sustainability"
-          className="mx-auto w-full max-w-6xl px-6 py-12"
-        >
+        <section id="sustainability" className="mx-auto w-full max-w-6xl px-6 py-12">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
             <div className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
               <p className="text-sm font-semibold text-green-700">
@@ -345,10 +237,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          id="reviews"
-          className="mx-auto w-full max-w-6xl px-6 py-12"
-        >
+        <section id="reviews" className="mx-auto w-full max-w-6xl px-6 py-12">
           <div className="rounded-3xl border border-zinc-200 bg-white p-10 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-6">
               <div>
@@ -359,12 +248,12 @@ export default function Home() {
                   Customers feel the freshness.
                 </h2>
               </div>
-              <a
+              <Link
                 className="inline-flex items-center justify-center rounded-full border border-zinc-200 px-5 py-2 text-sm font-semibold text-zinc-900 transition hover:border-zinc-300"
-                href="#"
+                href="/reviews"
               >
                 Read all reviews
-              </a>
+              </Link>
             </div>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {[
@@ -413,43 +302,15 @@ export default function Home() {
                   recipes.
                 </p>
               </div>
-              <a
+              <Link
                 className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-900"
-                href="#"
+                href="/contact#newsletter"
               >
                 Join the list
-              </a>
+              </Link>
             </div>
           </div>
         </section>
-      </main>
-
-      <footer className="border-t border-zinc-200 bg-white">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-base font-semibold text-zinc-900">
-              Fresh Harvest
-            </p>
-            <p className="mt-2 text-sm text-zinc-500">
-              Bringing local farms to your kitchen.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-4 text-sm font-medium text-zinc-600">
-            <a className="hover:text-zinc-900" href="#">
-              Delivery zones
-            </a>
-            <a className="hover:text-zinc-900" href="#">
-              Farm partners
-            </a>
-            <a className="hover:text-zinc-900" href="#">
-              Sustainability
-            </a>
-            <a className="hover:text-zinc-900" href="#">
-              Help center
-            </a>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </main>
   );
 }
