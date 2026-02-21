@@ -11,7 +11,7 @@ export default function SustainabilityPage() {
           Radically transparent sustainability.
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-base text-zinc-600">
-          We don't just talk about being green. We measure our impact, reduce waste at every step, and invest directly in the soil that grows our food.
+          We don&apos;t just talk about being green. We measure our impact, reduce waste at every step, and invest directly in the soil that grows our food.
         </p>
       </div>
 

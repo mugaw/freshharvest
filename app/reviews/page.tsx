@@ -73,10 +73,10 @@ export default function ReviewsPage() {
     <main className="mx-auto w-full max-w-6xl px-6 py-12 text-center md:py-20">
       <p className="text-sm font-semibold text-green-700">Customer feedback</p>
       <h1 className="mt-2 text-3xl font-semibold text-zinc-900 md:text-5xl">
-        Don't just take our word for it.
+        Don&apos;t just take our word for it.
       </h1>
       <p className="mx-auto mt-4 max-w-2xl text-base text-zinc-600">
-        We've delivered over 100,000 orders to households across the coast. Here is what they have to say about the Fresh Harvest experience.
+        We&apos;ve delivered over 100,000 orders to households across the coast. Here is what they have to say about the Fresh Harvest experience.
       </p>
 
       <div className="mt-12 flex flex-col justify-center gap-6 sm:flex-row sm:items-center">
@@ -104,7 +104,7 @@ export default function ReviewsPage() {
               <span className="text-xs text-zinc-400">{review.date}</span>
             </div>
             <h3 className="text-lg font-semibold text-zinc-900">{review.title}</h3>
-            <p className="mt-3 flex-1 text-sm text-zinc-600">"{review.content}"</p>
+            <p className="mt-3 flex-1 text-sm text-zinc-600">&quot;{review.content}&quot;</p>
             <div className="mt-6 flex items-center gap-3 border-t border-zinc-100 pt-4">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-700">
                 {review.name.charAt(0)}

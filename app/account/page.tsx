@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useState } from "react";
-import Link from "next/link";
 import { Leaf } from "lucide-react";
 
 // Sign In Form Schema
@@ -29,7 +28,7 @@ export default function AccountPage() {
     resolver: zodResolver(signInSchema),
   });
 
-  const onSubmit = (data: SignInValues) => {
+  const onSubmit = () => {
     setIsSubmitting(true);
     setIsError(false);
     

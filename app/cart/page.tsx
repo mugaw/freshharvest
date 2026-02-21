@@ -37,7 +37,7 @@ function CartContent() {
         }
       }
     }
-    
+    // eslint-disable-next-line
     setCartItems(initialItems);
     setIsLoaded(true);
   }, [addedProductSlug]);
@@ -76,7 +76,7 @@ function CartContent() {
             <ShoppingBag className="h-10 w-10" />
           </div>
           <h1 className="text-2xl font-bold text-zinc-900">Your cart is empty</h1>
-          <p className="mt-2 text-zinc-600">Looks like you haven't added anything to your box yet.</p>
+          <p className="mt-2 text-zinc-600">Looks like you haven&apos;t added anything to your box yet.</p>
           <Link
             href="/shop"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-green-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-green-500 hover:scale-105"

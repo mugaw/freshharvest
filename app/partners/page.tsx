@@ -28,7 +28,7 @@ export default function PartnersPage() {
              <h2 className="text-2xl font-bold text-zinc-900">Green Acreage Fields</h2>
              <p className="mt-2 text-sm font-semibold text-zinc-500">Watsonville, CA • Partner since 2021</p>
              <p className="mt-4 text-base text-zinc-600">
-               Green Acreage is a third-generation family farm that focuses purely on heirloom varieties. They are our primary supplier for tomatoes, peppers, and summer squash. By utilizing ladybugs rather than synthetic pesticides, they've maintained an incredible biodiversity on their land.
+               Green Acreage is a third-generation family farm that focuses purely on heirloom varieties. They are our primary supplier for tomatoes, peppers, and summer squash. By utilizing ladybugs rather than synthetic pesticides, they&apos;ve maintained an incredible biodiversity on their land.
              </p>
              <Link href="/shop?category=vegetables" className="mt-6 inline-flex text-sm font-semibold text-green-700 hover:underline">
                Shop their produce &rarr;

@@ -48,7 +48,7 @@ export default function ContactPage() {
         <div>
           <p className="text-sm font-semibold text-green-700">Get in touch</p>
           <h1 className="mt-2 text-3xl font-semibold text-zinc-900 md:text-5xl">
-            We're here to help.
+            We&apos;re here to help.
           </h1>
           <p className="mt-4 max-w-lg text-base text-zinc-600">
             Have a question about a recent delivery, want to know more about our sourcing, or interested in becoming a farm partner? Reach out to us.
@@ -99,7 +99,7 @@ export default function ContactPage() {
           {isSuccess && (
             <div className="mt-6 rounded-2xl bg-green-50 p-4 text-sm text-green-800 border-l-4 border-green-600">
               <p className="font-semibold">Thank you for reaching out!</p>
-              <p className="mt-1">We've received your message and will get back to you shortly.</p>
+              <p className="mt-1">We&apos;ve received your message and will get back to you shortly.</p>
             </div>
           )}
 
