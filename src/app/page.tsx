@@ -1,455 +1,65 @@
 import Image from "next/image";
 
-const categories = [
-  {
-    title: "Fresh Fruits",
-    detail: "Seasonal picks and tropical favorites.",
-    image: "/images/categories/fruits.jpg",
-  },
-  {
-    title: "Garden Vegetables",
-    detail: "Crisp greens and daily harvests.",
-    image: "/images/categories/vegetables.jpg",
-  },
-  {
-    title: "Dairy & Eggs",
-    detail: "Small-batch cheeses and pasture eggs.",
-    image: "/images/categories/dairy.jpg",
-  },
-  {
-    title: "Pantry Staples",
-    detail: "Sustainable pantry essentials.",
-    image: "/images/categories/pantry.jpg",
-  },
-];
-
-const products = [
-  {
-    name: "Hass Avocado",
-    price: "$2.99",
-    unit: "each",
-    image: "/images/products/avocado.jpg",
-  },
-  {
-    name: "Blueberry Pack",
-    price: "$4.50",
-    unit: "12 oz",
-    image: "/images/products/blueberries.jpg",
-  },
-  {
-    name: "Organic Carrots",
-    price: "$3.20",
-    unit: "2 lb",
-    image: "/images/products/carrots.jpg",
-  },
-  {
-    name: "Creamy Brie",
-    price: "$6.75",
-    unit: "6 oz",
-    image: "/images/products/cheese.jpg",
-  },
-  {
-    name: "Free-Range Eggs",
-    price: "$5.30",
-    unit: "dozen",
-    image: "/images/products/eggs.jpg",
-  },
-  {
-    name: "Wild Salmon",
-    price: "$12.90",
-    unit: "8 oz",
-    image: "/images/products/salmon.jpg",
-  },
-];
-
-const stats = [
-  { label: "Local farms", value: "120+" },
-  { label: "Morning deliveries", value: "2,400" },
-  { label: "Average rating", value: "4.9/5" },
-];
-
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900">
-      <header className="border-b border-zinc-200/70 bg-white/80 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-green-600 text-sm font-semibold text-white">
-              FH
-            </div>
-            <div>
-              <p className="text-lg font-semibold text-zinc-900">
-                Fresh Harvest
-              </p>
-              <p className="text-xs text-zinc-500">Farm to door in hours</p>
-            </div>
-          </div>
-          <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-600 md:flex">
-            <a className="hover:text-zinc-900" href="#categories">
-              Categories
-            </a>
-            <a className="hover:text-zinc-900" href="#featured">
-              Featured
-            </a>
-            <a className="hover:text-zinc-900" href="#sustainability">
-              Sustainability
-            </a>
-            <a className="hover:text-zinc-900" href="#reviews">
-              Reviews
-            </a>
-          </nav>
-          <div className="flex items-center gap-3">
+    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={100}
+          height={20}
+          priority
+        />
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+            To get started, edit the page.tsx file.
+          </h1>
+          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            Looking for a starting point or more instructions? Head over to{" "}
             <a
-              className="hidden text-sm font-medium text-zinc-600 hover:text-zinc-900 sm:inline-flex"
-              href="#"
+              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
             >
-              Sign in
-            </a>
+              Templates
+            </a>{" "}
+            or the{" "}
             <a
-              className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-zinc-800"
-              href="#"
+              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
             >
-              Start cart
-            </a>
-          </div>
+              Learning
+            </a>{" "}
+            center.
+          </p>
         </div>
-      </header>
-
-      <main>
-        <section className="mx-auto grid w-full max-w-6xl gap-12 px-6 py-14 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
-            <p className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-xs font-semibold text-green-700">
-              Fresh arrivals every morning
-            </p>
-            <h1 className="mt-5 text-4xl font-semibold leading-tight text-zinc-900 md:text-5xl">
-              Seasonal produce and pantry essentials, delivered with care.
-            </h1>
-            <p className="mt-5 text-lg text-zinc-600">
-              Curated boxes from nearby farms, delivered the same day. Build
-              your weekly lineup with handpicked fruit, vegetables, dairy, and
-              proteins.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-4">
-              <a
-                className="inline-flex items-center justify-center rounded-full bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-green-500"
-                href="#featured"
-              >
-                Shop fresh
-              </a>
-              <a
-                className="inline-flex items-center justify-center rounded-full border border-zinc-200 bg-white px-6 py-3 text-sm font-semibold text-zinc-900 transition hover:border-zinc-300"
-                href="#categories"
-              >
-                Build a weekly box
-              </a>
-            </div>
-            <div className="mt-10 grid grid-cols-3 gap-6">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-2xl font-semibold text-zinc-900">
-                    {stat.value}
-                  </p>
-                  <p className="mt-1 text-sm text-zinc-500">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative">
-            <div className="absolute -left-6 top-6 hidden h-28 w-28 rounded-3xl bg-green-100 lg:block" />
-            <div className="relative overflow-hidden rounded-[32px] border border-white bg-white shadow-xl">
-              <Image
-                src="/images/products/grocery-basket.jpg"
-                alt="Fresh Harvest grocery basket"
-                width={640}
-                height={720}
-                className="h-full w-full object-cover"
-                priority
-              />
-            </div>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
-                <p className="text-sm font-semibold text-zinc-900">
-                  Delivery today
-                </p>
-                <p className="mt-1 text-xs text-zinc-500">
-                  Order by 2 PM for same-day freshness.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm">
-                <p className="text-sm font-semibold text-zinc-900">
-                  Smart substitutions
-                </p>
-                <p className="mt-1 text-xs text-zinc-500">
-                  Curated swaps if a harvest sells out.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="categories"
-          className="mx-auto w-full max-w-6xl px-6 py-12"
-        >
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-sm font-semibold text-green-700">
-                Shop by category
-              </p>
-              <h2 className="mt-2 text-3xl font-semibold text-zinc-900">
-                Everything you need for the week.
-              </h2>
-            </div>
-            <a
-              className="text-sm font-semibold text-green-700 hover:text-green-800"
-              href="#featured"
-            >
-              Browse all products
-            </a>
-          </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {categories.map((category) => (
-              <article
-                key={category.title}
-                className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm"
-              >
-                <div className="relative h-40">
-                  <Image
-                    src={category.image}
-                    alt={category.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover transition duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-green-700">
-                    {category.detail}
-                  </p>
-                  <h3 className="mt-2 text-lg font-semibold text-zinc-900">
-                    {category.title}
-                  </h3>
-                  <p className="mt-3 text-sm font-semibold text-zinc-700">
-                    Shop now →
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section
-          id="featured"
-          className="mx-auto w-full max-w-6xl px-6 py-12"
-        >
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-sm font-semibold text-green-700">
-                Featured picks
-              </p>
-              <h2 className="mt-2 text-3xl font-semibold text-zinc-900">
-                Fresh now, ready to deliver.
-              </h2>
-            </div>
-            <a
-              className="text-sm font-semibold text-green-700 hover:text-green-800"
-              href="#reviews"
-            >
-              View weekly specials
-            </a>
-          </div>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((product) => (
-              <article
-                key={product.name}
-                className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm"
-              >
-                <div className="relative h-44">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-5">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-zinc-900">
-                      {product.name}
-                    </h3>
-                    <span className="text-sm font-semibold text-green-700">
-                      {product.price}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-zinc-500">
-                    {product.unit} · Packed this morning
-                  </p>
-                  <a
-                    className="mt-4 inline-flex w-full items-center justify-center rounded-full border border-zinc-200 px-4 py-2 text-sm font-semibold text-zinc-900 transition hover:border-zinc-300"
-                    href="#"
-                  >
-                    Add to cart
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section
-          id="sustainability"
-          className="mx-auto w-full max-w-6xl px-6 py-12"
-        >
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-            <div className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm">
-              <p className="text-sm font-semibold text-green-700">
-                Sustainability built in
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold text-zinc-900">
-                Good for the planet, better for your table.
-              </h2>
-              <p className="mt-4 text-base text-zinc-600">
-                We partner with regenerative farms and deliver with reusable
-                crates. Every order helps fund composting, soil restoration, and
-                reduced food waste.
-              </p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl bg-zinc-50 p-4">
-                  <p className="text-sm font-semibold text-zinc-900">
-                    Reusable packaging
-                  </p>
-                  <p className="mt-2 text-xs text-zinc-500">
-                    Returnable crates and low-waste bags.
-                  </p>
-                </div>
-                <div className="rounded-2xl bg-zinc-50 p-4">
-                  <p className="text-sm font-semibold text-zinc-900">
-                    Transparent sourcing
-                  </p>
-                  <p className="mt-2 text-xs text-zinc-500">
-                    Meet the farms behind every ingredient.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="relative overflow-hidden rounded-3xl border border-zinc-200 shadow-sm">
-              <Image
-                src="/images/products/sustainability.jpg"
-                alt="Sustainability and farm practices"
-                width={720}
-                height={640}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-        </section>
-
-        <section
-          id="reviews"
-          className="mx-auto w-full max-w-6xl px-6 py-12"
-        >
-          <div className="rounded-3xl border border-zinc-200 bg-white p-10 shadow-sm">
-            <div className="flex flex-wrap items-center justify-between gap-6">
-              <div>
-                <p className="text-sm font-semibold text-green-700">
-                  Loved by busy households
-                </p>
-                <h2 className="mt-2 text-3xl font-semibold text-zinc-900">
-                  Customers feel the freshness.
-                </h2>
-              </div>
-              <a
-                className="inline-flex items-center justify-center rounded-full border border-zinc-200 px-5 py-2 text-sm font-semibold text-zinc-900 transition hover:border-zinc-300"
-                href="#"
-              >
-                Read all reviews
-              </a>
-            </div>
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
-              {[
-                {
-                  name: "Maya L.",
-                  quote:
-                    "The produce is vibrant and lasts all week. Delivery is always on time.",
-                },
-                {
-                  name: "Daniel R.",
-                  quote:
-                    "I love the farm stories and the easy swaps when something sells out.",
-                },
-                {
-                  name: "Priya S.",
-                  quote:
-                    "We cook more at home now. The salmon and dairy are especially good.",
-                },
-              ].map((review) => (
-                <div
-                  key={review.name}
-                  className="rounded-2xl bg-zinc-50 p-5"
-                >
-                  <p className="text-sm text-zinc-600">{review.quote}</p>
-                  <p className="mt-4 text-sm font-semibold text-zinc-900">
-                    {review.name}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto w-full max-w-6xl px-6 pb-16">
-          <div className="rounded-3xl bg-zinc-900 px-8 py-10 text-white md:px-12">
-            <div className="flex flex-wrap items-center justify-between gap-8">
-              <div>
-                <p className="text-sm font-semibold text-green-300">
-                  Weekly harvest updates
-                </p>
-                <h2 className="mt-3 text-3xl font-semibold">
-                  Get fresh market drops in your inbox.
-                </h2>
-                <p className="mt-3 text-sm text-zinc-300">
-                  Early access to limited harvests, new farms, and seasonal
-                  recipes.
-                </p>
-              </div>
-              <a
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-900"
-                href="#"
-              >
-                Join the list
-              </a>
-            </div>
-          </div>
-        </section>
+        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+          <a
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={16}
+              height={16}
+            />
+            Deploy Now
+          </a>
+          <a
+            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Documentation
+          </a>
+        </div>
       </main>
-
-      <footer className="border-t border-zinc-200 bg-white">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-base font-semibold text-zinc-900">
-              Fresh Harvest
-            </p>
-            <p className="mt-2 text-sm text-zinc-500">
-              Bringing local farms to your kitchen.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-4 text-sm font-medium text-zinc-600">
-            <a className="hover:text-zinc-900" href="#">
-              Delivery zones
-            </a>
-            <a className="hover:text-zinc-900" href="#">
-              Farm partners
-            </a>
-            <a className="hover:text-zinc-900" href="#">
-              Sustainability
-            </a>
-            <a className="hover:text-zinc-900" href="#">
-              Help center
-            </a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
