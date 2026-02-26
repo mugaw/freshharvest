@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Leaf, Recycle, Sprout } from "lucide-react";
+import { getAssetPath } from "@/lib/paths";
+
 
 export default function SustainabilityPage() {
   return (
@@ -49,7 +51,7 @@ export default function SustainabilityPage() {
 
       <div className="mt-16 overflow-hidden rounded-3xl border border-zinc-200 shadow-sm relative h-96 w-full lg:h-[32rem]">
          <Image
-            src="/images/products/sustainability.jpg"
+            src={getAssetPath("/images/products/sustainability.jpg")}
             alt="Farm soil showing regenerative agriculture"
             fill
             className="object-cover"

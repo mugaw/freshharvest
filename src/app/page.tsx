@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { categories, products } from "./data/products";
+import { getAssetPath } from "@/lib/paths";
+
 
 const stats = [
   { label: "Local farms", value: "120+" },
@@ -53,7 +55,7 @@ export default function Home() {
             <div className="absolute -left-6 top-6 hidden h-28 w-28 rounded-3xl bg-green-100 lg:block" />
             <div className="relative overflow-hidden rounded-[32px] border border-white bg-white shadow-xl">
               <Image
-                src="/images/products/grocery-basket.jpg"
+                src={getAssetPath("/images/products/grocery-basket.jpg")}
                 alt="Fresh Harvest grocery basket"
                 width={640}
                 height={720}
@@ -107,7 +109,7 @@ export default function Home() {
               >
                 <div className="relative h-40">
                   <Image
-                    src={category.image}
+                    src={getAssetPath(category.image)}
                     alt={category.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -158,7 +160,7 @@ export default function Home() {
               >
                 <div className="relative h-44">
                   <Image
-                    src={product.image}
+                    src={getAssetPath(product.image)}
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -227,7 +229,7 @@ export default function Home() {
             </div>
             <div className="relative overflow-hidden rounded-3xl border border-zinc-200 shadow-sm">
               <Image
-                src="/images/products/sustainability.jpg"
+                src={getAssetPath("/images/products/sustainability.jpg")}
                 alt="Sustainability and farm practices"
                 width={720}
                 height={640}

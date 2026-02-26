@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products } from "../../data/products";
+import { getAssetPath } from "@/lib/paths";
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;
@@ -52,7 +53,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm">
           <Image
-            src={product.image}
+            src={getAssetPath(product.image)}
             alt={product.name}
             width={760}
             height={640}

@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getAssetPath } from "@/lib/paths";
+
 
 export default function AboutPage() {
   return (
@@ -49,7 +51,7 @@ export default function AboutPage() {
         </div>
         <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-sm">
           <Image
-            src="/images/products/sustainability.jpg"
+            src={getAssetPath("/images/products/sustainability.jpg")}
             alt="Fresh Harvest team on the farm"
             width={720}
             height={640}

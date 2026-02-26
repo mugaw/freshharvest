@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getAssetPath } from "@/lib/paths";
+
 
 export default function PartnersPage() {
   return (
@@ -18,7 +20,7 @@ export default function PartnersPage() {
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
            <div className="relative h-64 overflow-hidden rounded-3xl border border-zinc-200 shadow-sm sm:h-80 lg:h-96">
              <Image 
-                src="/images/categories/vegetables.jpg" 
+                src={getAssetPath("/images/categories/vegetables.jpg")} 
                 alt="Green acreage farm" 
                 fill 
                 className="object-cover transition-transform duration-700 hover:scale-105"

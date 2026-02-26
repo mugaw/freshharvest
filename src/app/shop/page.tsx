@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { categories, products } from "../data/products";
+import { getAssetPath } from "@/lib/paths";
 
 const categoryLabels: Record<string, string> = {
   fruits: "Fresh Fruits",
@@ -109,7 +110,7 @@ function ShopContent() {
           >
             <div className="relative h-44">
               <Image
-                src={product.image}
+                src={getAssetPath(product.image)}
                 alt={product.name}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

@@ -19,6 +19,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };
 
 console.log(`Loading next.config.mjs with output: export, basePath: ${basePath}`);
