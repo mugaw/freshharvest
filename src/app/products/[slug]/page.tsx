@@ -4,11 +4,18 @@ import { notFound } from "next/navigation";
 import { products } from "../../data/products";
 
 type ProductPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const product = products.find((item) => item.slug === params.slug);
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    slug: product.slug,
+  }));
+}
+
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { slug } = await params;
+  const product = products.find((item) => item.slug === slug);
 
   if (!product) {
     notFound();
